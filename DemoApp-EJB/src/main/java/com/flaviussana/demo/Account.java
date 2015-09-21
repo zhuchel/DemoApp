@@ -7,8 +7,10 @@ import javax.persistence.Id;
 public class Account {
   @Id
   private String name;
-  
+
   private float amount;
+
+   private float no;
 
   public String getName() {
     return name;
@@ -25,6 +27,6 @@ public class Account {
   public void setAmount(float amount) {
     this.amount = amount;
   }
-  
-  
+
+
 }
