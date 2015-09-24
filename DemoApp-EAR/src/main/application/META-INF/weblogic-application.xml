@@ -11,6 +11,7 @@
 		<package-name>org.slf4j.helpers.*</package-name>
 		<package-name>org.slf4j.impl.*</package-name>
 		<package-name>org.slf4j.spi.*</package-name>
+		<package-name>com.sun.xml.ws.api.wsdl.parser.*</package-name>
 	</prefer-application-packages>
 
 
@@ -20,6 +21,9 @@
 	<!-- SLF4J: Found binding in [jar:file:/C:/wls1211/modules/org.slf4j.jdk14_1.6.1.0.jar!/org/slf4j/impl/StaticLoggerBinder.class] -->
 	<prefer-application-resources>
 		<resource-name>org/slf4j/impl/StaticLoggerBinder.class</resource-name>
+		<resource-name>META-INF/services/javax.xml.ws.*</resource-name>
+		<resource-name>META-INF/services/com.sun.xml.ws.*</resource-name>
+		<resource-name>META-INF/services/com.sun.tools.ws.*</resource-name>
 	</prefer-application-resources>
 
 </weblogic-application>

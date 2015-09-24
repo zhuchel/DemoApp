@@ -9,52 +9,64 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.flaviussana.demo.interceptor.OnDeposit;
-
+import com.some.service.finance.FinanceSupport;
+import com.some.service.finance.SomeSupport;
 
 /**
  * CDI Managed Bean Class
  */
 @Named
 @RequestScoped
-public class AccountBean{
+public class AccountBean {
 
-  private String name;
-  
-  private float amount;
-  
-  private String msg;
+	private String name;
 
-  public String getName() {
-    return name;
-  }
+	private float amount;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	private String msg;
 
-  public float getAmount() {
-    return amount;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setAmount(float amount) {
-    this.amount = amount;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getMsg() {
-    return msg;
-  }
+	public float getAmount() {
+		return amount;
+	}
 
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
 
-  @BeanCounter @Inject
-  private AccountManager accountManager;
+	public String getMsg() {
+		return msg;
+	}
 
-  @OnDeposit
-  public void deposit() {
-    accountManager.depositOnAccount(name, amount);
-    Account account = accountManager.findAccount(name);
-    msg = "The money have been deposited to " + account.getName() + ", the balance of the account is " + account.getAmount();
-  }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	@BeanCounter
+	@Inject
+	private AccountManager accountManager;
+
+	@Inject
+	FinanceSupport support;
+
+	@OnDeposit
+	public void deposit() {
+		accountManager.depositOnAccount(name, amount);
+		Account account = accountManager.findAccount(name);
+		msg = "The money have been deposited to " + account.getName()
+				+ ", the balance of the account is " + account.getAmount();
+	}
+
+	public void callService() {
+		System.out.println("########### in callService" );
+		SomeSupport port = support.getSomeSupportPort();
+		port.getCacheManagerInformation();
+	}
 }
