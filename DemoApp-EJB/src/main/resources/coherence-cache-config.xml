@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+
+<cache-config>
+   <caching-scheme-mapping>
+      <cache-mapping>
+         <cache-name>hello-exampleHUI</cache-name>
+         <scheme-name>distributedHUI</scheme-name>
+      </cache-mapping>
+   </caching-scheme-mapping>
+   
+   <caching-schemes>
+      <distributed-scheme>
+         <scheme-name>distributedHUI</scheme-name>
+         <service-name>DistributedCacheHui</service-name>
+         <backing-map-scheme>
+         	<local-scheme/>         
+         </backing-map-scheme>
+         <autostart>true</autostart>
+      </distributed-scheme>
+   </caching-schemes>
+</cache-config>
