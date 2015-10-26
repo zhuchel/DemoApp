@@ -12,17 +12,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.groups.Default;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import com.daimler.mop.validation.IValidation;
-import com.daimler.mop.validation.marker.ILegTimeMarker;
-import com.daimler.mop.validation.marker.IMyTaxiBookingMarker;
-import com.daimler.mop.validation.marker.IRideAnnouncementInfoMarker;
-import com.daimler.mop.validation.marker.IRideAnnouncementSearchMarker;
 
-/**
- * Represents a journey section containing information about locations, time, vehicle and MSP
- */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OMLeg implements com.validation.IValidation {
 

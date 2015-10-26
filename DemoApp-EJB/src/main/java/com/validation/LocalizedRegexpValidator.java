@@ -18,7 +18,7 @@ public class LocalizedRegexpValidator implements ConstraintValidator<LocalizedRe
     private static final Logger LOGGER = Logger.getLogger(LocalizedRegexpValidator.class.getCanonicalName());
 
     private ResourceBundle validatorBundle;
-    public final static String VALIDATOR_BUNDLE_NAME = "com.daimler.mop.validation.regexps.ValidatorBundle";
+    public final static String VALIDATOR_BUNDLE_NAME = "sdfd";
 
     @Override
     public void initialize(LocalizedRegexp regexpHandle) {
