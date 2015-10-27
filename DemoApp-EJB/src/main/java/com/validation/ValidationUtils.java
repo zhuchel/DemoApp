@@ -3,8 +3,6 @@ package com.validation;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -15,13 +13,12 @@ import org.apache.bval.jsr303.ApacheValidatorFactory;
 
 public class ValidationUtils {
 
-	public static Validator initializeValidator(Locale locale, String objectname) {
+	public static Validator initializeValidator(String objectname) {
 		ApacheValidatorFactory validatorFactory = (ApacheValidatorFactory) Validation
 				.byProvider(ApacheValidationProvider.class).configure()
 				.buildValidatorFactory();
 
 		LocalizedRegexpValidatorFactory localizedFactory = new LocalizedRegexpValidatorFactory();
-		localizedFactory.setLocale(locale);
 		localizedFactory.setObjectname(objectname);
 		validatorFactory.setConstraintValidatorFactory(localizedFactory);
 		Validator validator = validatorFactory.getValidator();
@@ -100,10 +97,4 @@ public class ValidationUtils {
 		return vmsg;
 	}
 
-	public static boolean isValidEmail(String email) {
-		ResourceBundle bundle = ResourceBundle
-				.getBundle(LocalizedRegexpValidator.VALIDATOR_BUNDLE_NAME);
-		String regexp = bundle.getString("email.regexpvalidator");
-		return email.matches(regexp);
-	}
 }

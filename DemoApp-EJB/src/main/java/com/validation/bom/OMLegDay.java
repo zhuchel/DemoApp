@@ -14,12 +14,12 @@ import com.validation.constraints.LocalizedRegexp;
 
 
 
-public class OMLeg implements IValidation {
+public class OMLegDay implements IValidation {
 
     @NotNull
 	private String name;
     
-    @LocalizedRegexp
+    @LocalizedRegexp(day=Day.MONDAY)
 	private Date dt;
 
 	public void setName(String name) {

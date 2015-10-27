@@ -1,63 +1,52 @@
 package com.validation;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.logging.Logger;
+import java.util.Date;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class LocalizedRegexpValidator implements ConstraintValidator<LocalizedRegexp, String> {
+import com.validation.bom.Day;
+import com.validation.constraints.LocalizedRegexp;
 
-    private Locale currentLocale;
-    private String objectname;
-    private String key;
-    private String attributename;
-    private String severity;
+public class LocalizedRegexpValidator implements
+		ConstraintValidator<LocalizedRegexp, Date> {
 
-    private static final Logger LOGGER = Logger.getLogger(LocalizedRegexpValidator.class.getCanonicalName());
+	private String objectname;
+	private Day day;
 
-    private ResourceBundle validatorBundle;
-    public final static String VALIDATOR_BUNDLE_NAME = "sdfd";
+	@Override
+	public void initialize(LocalizedRegexp regexpHandle) {
+		objectname = regexpHandle.objectname();
+		day = regexpHandle.day();
 
-    @Override
-    public void initialize(LocalizedRegexp regexpHandle) {
-        key = regexpHandle.key();
-        attributename = regexpHandle.attributename();
-        currentLocale = new Locale(regexpHandle.localeLanguage(), regexpHandle.localeCountry());
-        validatorBundle = ResourceBundle.getBundle(VALIDATOR_BUNDLE_NAME, currentLocale);
-    }
+	}
 
-    @Override
-    public boolean isValid(String object, ConstraintValidatorContext constraintCtx) {
+	@Override
+	public boolean isValid(Date dt, ConstraintValidatorContext constraintCtx) {
 
-        boolean isValid = false;
-        String regexp = validatorBundle.getString(key);
+		boolean isValid = false;
 
-        if (object != null) {
-            isValid = object.matches(regexp);
-            if (!isValid) {
+		if (dt != null) {
+			isValid = dt.before(new Date());
+			if (!isValid) {
 
-                constraintCtx.disableDefaultConstraintViolation();
-                constraintCtx.buildConstraintViolationWithTemplate(key).addConstraintViolation();
-            }
-        }
-        // In case of null values dont match. Use @NotNull on the attribute
-        // instead
-        else
-            isValid = true;
-        return isValid;
-    }
+				constraintCtx.disableDefaultConstraintViolation();
+				constraintCtx.buildConstraintViolationWithTemplate(objectname)
+						.addConstraintViolation();
+			}
+		}
+		// In case of null values dont match. Use @NotNull on the attribute
+		// instead
+		else {
+			isValid = true;
+		}
+		if (day == Day.MONDAY)
+			isValid = false;
+		return isValid;
+	}
 
-    public void setLocale(Locale locale) {
-        this.currentLocale = locale;
-    }
+	public void setObjectname(String objectname) {
+		this.objectname = objectname;
+	}
 
-    public void setObjectname(String objectname) {
-        this.objectname = objectname;
-    }
-
-    public void setSeverity(String severity) {
-        this.severity = severity;
-    }
 }

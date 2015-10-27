@@ -1,7 +1,5 @@
 package com.validation;
 
-import java.util.Locale;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorFactory;
 import javax.validation.ValidationException;
@@ -9,7 +7,6 @@ import javax.validation.ValidationException;
 public class LocalizedRegexpValidatorFactory implements
 		ConstraintValidatorFactory {
 
-	public Locale locale;
 	public String objectname = this.getClass().getSimpleName();
 
 	@Override
@@ -18,7 +15,6 @@ public class LocalizedRegexpValidatorFactory implements
 			T instance = key.newInstance();
 			if (instance instanceof LocalizedRegexpValidator) {
 				LocalizedRegexpValidator validator = (LocalizedRegexpValidator) instance;
-				validator.setLocale(locale);
 				validator.setObjectname(objectname);
 			}
 			return instance;
@@ -31,11 +27,13 @@ public class LocalizedRegexpValidatorFactory implements
         }
 	}
 
-	public void setLocale(Locale locale) {
-		this.locale = locale;
-	}
-
 	public void setObjectname(String objectname) {
 		this.objectname = objectname;
+	}
+
+	@Override
+	public void releaseInstance(ConstraintValidator<?, ?> arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

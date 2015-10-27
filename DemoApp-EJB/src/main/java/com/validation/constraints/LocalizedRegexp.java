@@ -8,32 +8,31 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import com.validation.LocalizedRegexpValidator;
+import com.validation.bom.Day;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-
 
 @Target({ METHOD, FIELD })
 @Constraint(validatedBy = LocalizedRegexpValidator.class)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LocalizedRegexp {
-    String key();
 
-    String localeLanguage() default "de";
+	Day day() default Day.FRIDAY;
 
-    String localeCountry() default "DE";
+	String localeLanguage() default "de";
 
-    String objectname() default "Object";
+	String localeCountry() default "DE";
 
-    String attributename();
+	String objectname() default "Object";
 
-    String severity() default "error";
+	String severity() default "error";
 
-    String message() default "Invalid field";
+	String message() default "Invalid field";
 
-    Class<?>[] groups() default {};
+	Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 }
