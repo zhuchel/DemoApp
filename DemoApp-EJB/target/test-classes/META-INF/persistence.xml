@@ -1,0 +1,33 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+   version="1.0">
+      
+   <persistence-unit name="MOPManagementTest" transaction-type="RESOURCE_LOCAL">
+       <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+       <class>com.daimler.mop.bom.User</class>
+       <class>com.daimler.mop.bom.MspCredentials</class>
+       <class>com.daimler.mop.bom.TempUser</class>
+       <class>com.daimler.mop.bom.oauth.OauthSession</class>
+       <class>com.daimler.mop.bom.UserIdentification</class>
+       <class>com.daimler.mop.bom.MspReceipt</class>
+       <class>com.daimler.mop.bom.MspOrder</class>
+       <class>com.daimler.mop.bom.payment.MspUserCard</class>
+       <exclude-unlisted-classes>true</exclude-unlisted-classes>
+       <properties>
+		<property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+		<property name="openjpa.ConnectionDriverName" value="com.ibm.db2.jcc.DB2Driver"/>
+		<property name="openjpa.ConnectionURL" value="jdbc:db2://s415vm544:50001/MOP"/>
+		<property name="openjpa.ConnectionUserName" value="idmp"/>
+        	<property name="openjpa.ConnectionPassword" value="IAPawas01"/>
+		<property name="openjpa.jdbc.Schema" value="ZC9CMOP"/>
+		<property name="openjpa.Log" value="none" />
+		<property name="openjpa.DataCache" value="true"/>
+		<property name="openjpa.QueryCache" value="true"/> 
+		<property name="openjpa.jdbc.DBDictionary"  value="batchLimit=100"/> 
+		<property name="openjpa.jdbc.QuerySQLCache"  value="false"/>
+       </properties>
+  </persistence-unit>
+  
+</persistence>

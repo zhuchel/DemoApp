@@ -4,12 +4,11 @@
 
 package com.validation.bom;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotNull;
 
 import com.validation.IValidation;
-import com.validation.constraints.LocalizedRegexp;
+import com.validation.constraints.LocalizedRegexpHui;
+import com.validation.marker.ILegTimeMarker;
 
 
 
@@ -19,8 +18,8 @@ public class OMLegDay implements IValidation {
     @NotNull
 	private String name;
     
-    @LocalizedRegexp(day=Day.MONDAY)
-	private Date dt;
+    @LocalizedRegexpHui(groups={ILegTimeMarker.class})
+	private String dt;
 
 	public void setName(String name) {
 		this.name = name;
@@ -30,11 +29,11 @@ public class OMLegDay implements IValidation {
 		return name;
 	}
 
-	public void setDt(Date dt) {
+	public void setDt(String dt) {
 		this.dt = dt;
 	}
 
-	public Date getDt() {
+	public String getDt() {
 		return dt;
 	}
 

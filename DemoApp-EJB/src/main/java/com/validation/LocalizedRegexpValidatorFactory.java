@@ -17,6 +17,10 @@ public class LocalizedRegexpValidatorFactory implements
 				LocalizedRegexpValidator validator = (LocalizedRegexpValidator) instance;
 				validator.setObjectname(objectname);
 			}
+			else if (instance instanceof LocalizedRegexpValidatorHui) {
+				LocalizedRegexpValidatorHui validator = (LocalizedRegexpValidatorHui) instance;
+				validator.setObjectname(objectname);
+			}
 			return instance;
 		} catch (IllegalAccessException ex) {
 			throw new ValidationException("Unable to instantiate : "
