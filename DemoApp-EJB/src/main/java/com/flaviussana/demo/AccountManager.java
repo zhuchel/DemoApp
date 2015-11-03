@@ -5,16 +5,19 @@
 package com.flaviussana.demo;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.classic.joran.JoranConfigurator;
+import com.some.hui.SomeHui;
 
 @Stateless
 @BeanCounter
 public class AccountManager {
+	
+	@Inject
+	private SomeHui hui;
 
 	private static Logger logger = LoggerFactory
 			.getLogger(AccountManager.class);
@@ -40,8 +43,11 @@ public class AccountManager {
 //		lc.stop();
 
 		System.out.println("########################### hier");
+		System.out.println("########################### hui:" + hui.getHui());
 		logger.debug("########## is this from logback?");
 		logger.info("######### in findAccount");
+		
+		
 		Account account = new Account();
 		account.setName("HUI");
 		account.setAmount(12.0f);

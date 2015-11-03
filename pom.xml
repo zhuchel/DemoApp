@@ -9,6 +9,7 @@
   <modules>
     <module>DemoApp-EAR</module>
     <module>DemoApp-EJB</module>
+    <module>DemoApp-EJB1</module>
     <module>DemoApp-WAR</module>
   </modules>
   

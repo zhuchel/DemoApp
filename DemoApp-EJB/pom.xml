@@ -24,6 +24,12 @@
 		<!-- dependency> <groupId>javax</groupId> <artifactId>javaee-api</artifactId> 
 			<version>6.0</version> <scope>provided</scope> </dependency -->
 		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-EJB1</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>javax.ejb-api</artifactId>
 			<version>3.2</version>
@@ -129,7 +135,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.1</version>
@@ -153,7 +159,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 		</plugins>
 		<filters>
 		      <filter>src/test/resources/hui.properties</filter>

@@ -28,6 +28,12 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-EJB1</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-WAR</artifactId>
 			<version>${project.version}</version>
 			<type>war</type>
