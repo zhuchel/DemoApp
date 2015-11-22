@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.some.hui.domain.Department" table="DEPARTMENT">
+		<!-- A 32 hex character is our surrogate key. It's automatically generated 
+			by Hibernate with the UUID pattern. -->
+		<id name="id" type="long" unsaved-value="null">
+			<column name="DEPARTMENT_ID" not-null="true" />
+			<!--generator class="uuid.hex" /-->
+		</id>
+		<property name="name">
+			<column name="DNAME" length="100" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

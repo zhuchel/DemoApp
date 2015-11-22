@@ -12,6 +12,13 @@
 		<package-name>org.slf4j.impl.*</package-name>
 		<package-name>org.slf4j.spi.*</package-name>
 		<package-name>com.sun.xml.ws.api.wsdl.parser.*</package-name>
+		<package-name>antlr.*</package-name>
+		<package-name>antlr.ASdebug.*</package-name>
+		<package-name>antlr.build.*</package-name>
+		<package-name>antlr.collections.*</package-name>
+		<package-name>antlr.collections.impl.*</package-name>
+		<package-name>antlr.debug.*</package-name>
+		<package-name>antlr.debug.misc.*</package-name>
 	</prefer-application-packages>
 
 

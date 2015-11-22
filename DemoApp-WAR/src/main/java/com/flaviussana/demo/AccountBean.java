@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.flaviussana.demo.interceptor.OnDeposit;
+import com.some.hui.domain.Department;
 import com.some.service.finance.FinanceSupport;
 import com.some.service.finance.SomeSupport;
 
@@ -65,8 +66,20 @@ public class AccountBean {
 	}
 
 	public void callService() {
-		System.out.println("########### in callService" );
+		System.out.println("########### in callService");
 		SomeSupport port = support.getSomeSupportPort();
 		port.getCacheManagerInformation();
+	}
+
+	public void createJpaDep() {
+		System.out.println("########### in createJpaDep");
+		Department dep = accountManager.createDepartment();
+		System.out.println("########### created JpaDep:" + dep.getId());
+	}
+	
+	public void createHibernateDep() {
+		System.out.println("########### in createJpaDep");
+		Department dep = accountManager.createDepartmentHibernate();
+		System.out.println("########### created JpaHibernate:" + dep.getId());
 	}
 }
