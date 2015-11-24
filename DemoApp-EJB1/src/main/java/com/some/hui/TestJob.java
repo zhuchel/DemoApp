@@ -65,12 +65,14 @@ public class TestJob implements Job {
 
 			Context ctx = new InitialContext();
 			EmployeeDemoSessionHUI fooRef = (EmployeeDemoSessionHUI) ctx
-					.lookup("java:global/examples/foo/remote/hui");
+					.lookup(EmployeeDemoSessionHUI.NAME);
 			if (fooRef == null) {
 				System.out.println("ref HUIIII->fooRef == null...");
 			} else {
 				System.out.println("ref HUIIIIIIII->fooRef != null...");
+				fooRef.doSomething();
 			}
+	
 
 			// ut = (UserTransaction)ct.lookup("java:comp/UserTransaction");
 			// if (ut == null) {

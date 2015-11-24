@@ -35,6 +35,9 @@ public class PersistenceProducerBean {
 	@Inject
 	@Stored
 	Department hui;
+	
+	@Inject
+	SomeSession bean;
 
 	// @Produces
 	// @Spain
@@ -71,6 +74,8 @@ public class PersistenceProducerBean {
 		} else {
 			System.out.println("########## em != null...");
 		}
+		
+		bean.doSomething();
 
 		// if (em1 == null) {
 		// System.out.println("########### injected em = null...");
@@ -81,12 +86,12 @@ public class PersistenceProducerBean {
 		System.out
 				.println("+++++++++++++++++++++++ in PersistenceProducer HUI");
 		System.out.println("########### init...");
-		try {
-			js.start();
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//try {
+			//js.start();
+//		} catch (NamingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		// TestPojo pojo = new TestPojo();
 		// pojo.execute();
 		// ejb.doSomething();
