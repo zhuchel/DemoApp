@@ -1,17 +1,13 @@
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+package huii;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
-import com.validation.AbstractRestValidator;
-import com.validation.ViolationMessages;
-import com.validation.bom.OMLeg;
-import com.validation.bom.OMLegDay;
-import com.validation.marker.ILegTimeMarker;
+import com.some.hui.domain.Department;
+
+
 
 
 
@@ -20,20 +16,33 @@ public class Trd {
 	@Test
 	public void test() throws InterruptedException {
 		
-		OMLeg leg = new OMLeg();
-		leg.setName("name");
-		leg.setDt(new Date());
-		Thread.sleep(100);
+		List<Department> deps = new ArrayList<Department>();
+		//Department dep = null;
+		int i=0;
+		for(i =0; i<10; i++) {
+			final Department dep = new Department();
+			dep.setId(Long.valueOf(i));
+			dep.setName("hui" + i);
+			deps.add(dep);
+		}
+	
+		assert(deps != null);
 		
-		OMLegDay legday = new OMLegDay();
-		legday.setName("name");
-		legday.setDt("hui");
 		
-		leg.setDay(legday);
-		
-		AbstractRestValidator validator = new AbstractRestValidator();
-		ViolationMessages mes = validator.validate(leg, ILegTimeMarker.class);
-		assertNull(mes);
+//		OMLeg leg = new OMLeg();
+//		leg.setName("name");
+//		leg.setDt(new Date());
+//		Thread.sleep(100);
+//		
+//		OMLegDay legday = new OMLegDay();
+//		legday.setName("name");
+//		legday.setDt("hui");
+//		
+//		leg.setDay(legday);
+//		
+//		AbstractRestValidator validator = new AbstractRestValidator();
+//		ViolationMessages mes = validator.validate(leg, ILegTimeMarker.class);
+//		assertNull(mes);
 		
 	}
 	
