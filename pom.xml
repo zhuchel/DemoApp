@@ -21,7 +21,7 @@
 			<version>3.0.1</version>
 			<configuration>
 				<failurePriority>1</failurePriority>
-				<targetJdk>1.6</targetJdk>
+				<targetJdk>1.7</targetJdk>
 				<failOnViolation>false</failOnViolation>
 				<verbose>true</verbose>
 			</configuration>
