@@ -13,13 +13,27 @@
     <module>DemoApp-WAR</module>
   </modules>
   
+ 
+  
   <build>
 	<plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-pmd-plugin</artifactId>
-			<version>3.0.1</version>
+			<version>3.5</version>
 			<configuration>
+				<!--rulesets>
+					<ruleset>${jenkins.pmd.rulsetdir}\\MOP_PMD_RuleSet_blocker.xml</ruleset>
+					<ruleset>${jenkins.pmd.rulsetdir}\\MOP_PMD_RuleSet_critical.xml</ruleset>
+				</rulesets-->
+				 <rulesets>
+				            <!-- Two rule sets that come bundled with PMD -->
+				            <ruleset>/rulesets/java/braces.xml</ruleset>
+				            <ruleset>/rulesets/java/naming.xml</ruleset>
+				            <ruleset>/rulesets/java/sunsecure.xml</ruleset>
+				            <!--rule ref="rulesets/sunsecure.xml/ArrayIsStoredDirectly"><priority>2</priority></rule-->
+				            <!-- Custom local file system rule set -->
+          			</rulesets>
 				<failurePriority>1</failurePriority>
 				<targetJdk>1.7</targetJdk>
 				<failOnViolation>false</failOnViolation>
@@ -46,9 +60,15 @@
 	    <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-pmd-plugin</artifactId>
-		<version>3.0.1</version>
+		<version>3.5</version>
 	    </plugin>
         </plugins>
    </reporting>
+   
+   <properties>
+   		<!-- Absolut dir to pmd properties on jenkins server. this is needed for 
+   			execution with profile pmd -->
+   		<jenkins.pmd.rulsetdir>C:\\Users\\oleg\\.jenkins\\rulesets</jenkins.pmd.rulsetdir>
+	</properties>
   
 </project>
