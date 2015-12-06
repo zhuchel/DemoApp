@@ -30,8 +30,8 @@
 				            <!-- Two rule sets that come bundled with PMD -->
 				            <ruleset>/rulesets/java/braces.xml</ruleset>
 				            <ruleset>/rulesets/java/naming.xml</ruleset>
-				            <ruleset>/rulesets/java/sunsecure.xml</ruleset>
-				            <!--rule ref="rulesets/sunsecure.xml/ArrayIsStoredDirectly"><priority>2</priority></rule-->
+				            <ruleset>${jenkins.pmd.rulsetdir}\\MOP_PMD_RuleSet_critical.xml</ruleset>
+				            <!--ruleset>/rulesets/java/sunsecure.xml</ruleset-->
 				            <!-- Custom local file system rule set -->
           			</rulesets>
 				<failurePriority>1</failurePriority>
