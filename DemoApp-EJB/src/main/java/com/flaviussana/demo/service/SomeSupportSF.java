@@ -18,6 +18,8 @@ import com.tangosol.net.CacheFactory;
 @WebService(name = "SomeSupport", serviceName = "financeSupport", targetNamespace = "http://some.com/service/finance")
 @Addressing(enabled = false, required = false)
 public class SomeSupportSF {
+	
+	private String[] test;
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	@WebMethod(operationName = "getCacheManagerInformation", action = "urn:getCacheManagerInformation")
@@ -52,5 +54,41 @@ public class SomeSupportSF {
 		map.put("hui", holder);
 		response.setMap(map);
 		return response;
+	}
+	
+	public void getHui1(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui2(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui3(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui4(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui5(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui6(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui7(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui8(String[] test) {
+		this.test = test;
+	}
+	
+	public void getHui9(String[] test) {
+		this.test = test;
 	}
 }
