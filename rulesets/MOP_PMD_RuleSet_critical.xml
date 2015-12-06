@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="MOP_PMD_RuleSet" xmlns="http://pmd.sf.net/ruleset/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd" xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>PMD Plugin preferences CRITICAL rule set</description>
+    <rule ref="rulesets/java/sunsecure.xml/ArrayIsStoredDirectly"><priority>2</priority></rule>
+</ruleset>
