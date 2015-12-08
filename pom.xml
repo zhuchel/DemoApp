@@ -27,10 +27,9 @@
 					<ruleset>${jenkins.pmd.rulsetdir}\\MOP_PMD_RuleSet_critical.xml</ruleset>
 				</rulesets-->
 				 <rulesets>
-				            <!-- Two rule sets that come bundled with PMD -->
-				            <ruleset>/rulesets/java/braces.xml</ruleset>
-				            <ruleset>/rulesets/java/naming.xml</ruleset>
-				            <ruleset>${jenkins.pmd.rulsetdir}\\MOP_PMD_RuleSet_critical.xml</ruleset>
+				            <!-- Two rule sets that come bundled with PMD --> 
+				            <ruleset>${jenkins.pmd.rulsetdir}\\SPAIN_PMD_RuleSet_blocker.xml</ruleset>
+				            <ruleset>${jenkins.pmd.rulsetdir}\\SPAIN_PMD_RuleSet_critical.xml</ruleset>
 				            <!--ruleset>/rulesets/java/sunsecure.xml</ruleset-->
 				            <!-- Custom local file system rule set -->
           			</rulesets>
