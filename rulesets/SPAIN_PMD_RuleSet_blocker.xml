@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="SPAIN_PMD_RuleSet" xmlns="http://pmd.sf.net/ruleset/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd" xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>PMD Plugin preferences BLOCKER rule set</description>
+    <rule ref="rulesets/java/controversial.xml/AvoidAccessibilityAlteration"><priority>1</priority></rule>
+    <rule ref="rulesets/java/controversial.xml/AvoidUsingNativeCode"><priority>1</priority></rule>
+    <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"><priority>1</priority></rule>
+    <rule ref="rulesets/java/controversial.xml/DoNotCallGarbageCollectionExplicitly"><priority>1</priority></rule>
+    <rule ref="rulesets/java/j2ee.xml/DoNotCallSystemExit"><priority>1</priority></rule>
+    <rule ref="rulesets/java/strictexception.xml/DoNotExtendJavaLangError"><priority>1</priority></rule>
+    <rule ref="rulesets/java/finalizers.xml/FinalizeDoesNotCallSuperFinalize"><priority>1</priority></rule>
+    <rule ref="rulesets/java/finalizers.xml/FinalizeOverloaded"><priority>1</priority></rule>
+    <rule ref="rulesets/java/finalizers.xml/FinalizeShouldBeProtected"><priority>1</priority></rule>
+    <rule ref="rulesets/java/basic.xml/OverrideBothEqualsAndHashcode"><priority>1</priority></rule>
+    <rule ref="rulesets/java/basic.xml/ReturnFromFinallyBlock"><priority>1</priority></rule>
+    <rule ref="rulesets/java/strings.xml/StringBufferInstantiationWithChar"><priority>1</priority></rule>
+</ruleset>
