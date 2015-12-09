@@ -8,16 +8,22 @@ import java.util.Map;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.soap.Addressing;
 
+import com.flaviussana.demo.converter.ConverterFactory;
+import com.flaviussana.demo.converter.bom.Plane;
 import com.tangosol.net.CacheFactory;
 
 @Stateless
 @WebService(name = "SomeSupport", serviceName = "financeSupport", targetNamespace = "http://some.com/service/finance")
 @Addressing(enabled = false, required = false)
 public class SomeSupportSF {
+	
+	@Inject
+	ConverterFactory<Plane, com.flaviussana.demo.converter.dom.Plane> factory;
 	
 	private String[] test;
 
@@ -33,6 +39,11 @@ public class SomeSupportSF {
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	@WebMethod(operationName = "getHui", action = "urn:getHui")
 	public HuiResponse getHui() {
+	
+		com.flaviussana.demo.converter.dom.Plane plane = new com.flaviussana.demo.converter.dom.Plane();
+		plane.setAirline("airline");
+		Plane converted = factory.convert(plane);
+		
 		HuiResponse response = new HuiResponse();
 		List<CacheInformation> list = new ArrayList<CacheInformation>();
 		CacheInformation info = new CacheInformation();
