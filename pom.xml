@@ -98,7 +98,7 @@
    			execution with profile pmd -->
    		<jenkins.pmd.rulsetdir>C:\\Users\\oleg\\.jenkins\\rulesets</jenkins.pmd.rulsetdir>
    		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
                 <sonar.language>java</sonar.language>
 	</properties>
   
