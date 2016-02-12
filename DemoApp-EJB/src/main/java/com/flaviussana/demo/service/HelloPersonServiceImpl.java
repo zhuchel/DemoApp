@@ -1,10 +1,12 @@
 package com.flaviussana.demo.service;
  
+import javax.ejb.Stateless;
 import javax.jws.WebService;
 import nl.example.hello_person.service.generated.HelloPersonServiceRequestType;
 import nl.example.hello_person.service.generated.HelloPersonServiceResponseType;
- 
-@WebService(endpointInterface="nl.example.hello_person.service.generated.HelloPersonServicePortType")
+
+@Stateless
+@WebService(serviceName = "HelloPersonService", targetNamespace = "http://example.nl/hellopersonservice/1.0", endpointInterface="nl.example.hello_person.service.generated.HelloPersonServicePortType")
 public class HelloPersonServiceImpl implements nl.example.hello_person.service.generated.HelloPersonServicePortType {
  
     @Override

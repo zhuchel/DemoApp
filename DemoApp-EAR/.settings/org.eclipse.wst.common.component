@@ -83,7 +83,7 @@
         <dependent-module archiveName="javassist-3.12.0.GA.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/javassist/javassist/3.12.0.GA/javassist-3.12.0.GA.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="DemoApp-WAR-1.0-SNAPSHOT.war" deploy-path="/" handle="module:/resource/DemoApp-WAR/DemoApp-WAR">
+        <dependent-module archiveName="DemoApp-WAR-1.0-SNAPSHOT.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/com/flaviussana/demo/DemoApp-WAR/1.0-SNAPSHOT/DemoApp-WAR-1.0-SNAPSHOT.war">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

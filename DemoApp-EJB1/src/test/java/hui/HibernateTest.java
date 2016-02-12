@@ -9,7 +9,7 @@ import com.some.hui.hibernate.HibernateUtil;
 
 public class HibernateTest {
 
-	@Test
+	//@Test
 	public void testF() {
 		Session session = HibernateUtil.currentSession();
 		Transaction tx = session.beginTransaction();

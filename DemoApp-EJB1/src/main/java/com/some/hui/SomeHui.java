@@ -9,6 +9,7 @@ public class SomeHui {
 	}
 
 	public String getHui() {
+		
 		return hui;
 	}
 

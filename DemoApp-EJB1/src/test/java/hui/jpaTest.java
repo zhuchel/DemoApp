@@ -21,7 +21,7 @@ public class jpaTest {
 
 	}
 
-	@Test
+	//@Test
 	public void testF() {
 		em.getTransaction().begin();
 		Department dep = new Department();
