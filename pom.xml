@@ -95,7 +95,6 @@
 		    <configuration>
 		        <destFile>${sonar.jacoco.reportPath}</destFile>
 		        <append>true</append>
-		        <exclude>DemoApp-EJB1/src/main/java/com/some/hui/domain/*</exclude> 
 		    </configuration>
 		    <executions>
 		        <execution>
@@ -133,6 +132,7 @@
    		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.coverage.exclusions>**/hui/*</sonar.coverage.exclusions>
                 <sonar.language>java</sonar.language>
 	</properties>
   
