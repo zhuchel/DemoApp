@@ -95,6 +95,7 @@
 		    <configuration>
 		        <destFile>${sonar.jacoco.reportPath}</destFile>
 		        <append>true</append>
+		        <exclude>com/some/hui/domain/*</exclude> 
 		    </configuration>
 		    <executions>
 		        <execution>
