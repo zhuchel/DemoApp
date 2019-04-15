@@ -1,0 +1,6 @@
+https://dzone.com/articles/java-distributed-caching-in-redis
+https://devramble.com/microservices-cache-redis-memcached/
+https://redis.io/topics/transactions#cas
+https://docs.couchbase.com/server/4.1/developer-guide/cas-concurrency.html
+https://www.ehcache.org/documentation/2.8/get-started/consistency-options.html
+https://hazelcast.com/blog/distributed-task-coordination-with-hazelcast/
