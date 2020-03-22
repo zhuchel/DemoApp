@@ -5,7 +5,7 @@
   <artifactId>DemoApp</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>DemoApp</name>
+  <name>DemoApp1</name>
   <modules>
     <module>DemoApp-EAR</module>
     <module>DemoApp-EJB</module>
